@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Classi]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Classe] NCHAR(10) NULL
+)

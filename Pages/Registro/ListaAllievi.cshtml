@@ -1,0 +1,39 @@
+﻿@page
+@model Bortolani_Registro.Pages.Registro.ListaAllieviModel
+@{
+}
+
+@if (Model.errorMessage.Length > 0)
+{
+	<div class="alert alert-warning alert-dismissible fade show" role='alert'>
+		<strong>@Model.errorMessage</strong>
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Chiudi"></button>
+	</div>
+}
+
+<a class="btn btn-primary btn-sm" href="add">Nuovo Allievo</a>
+
+<div>
+	<table width="80%">
+		<tr>
+			<th>Id</th>
+			<th>Cognome</th>
+			<th>Nome</th>
+			<th>Classe</th>
+			<th>Azioni</th>
+		</tr>
+		@foreach(var x in Model.listaAllievi)
+		{
+			<tr>
+				<td width="20%">@x.id</td>
+				<td width="20%">@x.surname</td>
+				<td width="20%">@x.name</td>
+				<td width="20%">@x.Class</td>
+				<td width="20%">
+					<a class="btn btn-primary btn-sm" href="edit?id=@x.id">Edit</a>
+					<a class="btn btn-danger btn-sm" href="delete?id=@x.id">Delete</a>
+				</td>
+			</tr>
+		}		
+	</table>
+</div>
